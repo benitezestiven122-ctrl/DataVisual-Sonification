@@ -1,0 +1,15 @@
+# Dependencias de ejecución (Streamlit Community Cloud lee este archivo).
+# Fase 1 — ingesta multiformato
+pandas>=2.2
+numpy>=1.26
+openpyxl>=3.1      # .xlsx / .xlsm
+odfpy>=1.4         # .ods
+pyarrow>=15        # .parquet / .feather
+xlrd>=2.0          # .xls (Excel 97-2003)
+# Fase 3 — sonificación
+scipy>=1.13        # filtros y reverb por convolución
+mido>=1.3          # exportación MIDI
+# Fase 5 — Streamlit app
+streamlit>=1.35
+# Fase 6 — Modo en vivo
+paho-mqtt>=1.6

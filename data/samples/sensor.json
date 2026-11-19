@@ -1,0 +1,847 @@
+{
+ "channel": {
+  "name": "wokwi-esp32"
+ },
+ "feeds": [
+  {
+   "timestamp": "2026-11-10T10:00:00",
+   "potenciometro": 2048,
+   "temperatura": 22.0,
+   "humedad": 54.5,
+   "luz": 560.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:01",
+   "potenciometro": 2192,
+   "temperatura": 22.0,
+   "humedad": 55.4,
+   "luz": 586.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:02",
+   "potenciometro": 2265,
+   "temperatura": 22.3,
+   "humedad": 54.2,
+   "luz": 556.9
+  },
+  {
+   "timestamp": "2026-11-10T10:00:03",
+   "potenciometro": 2334,
+   "temperatura": 21.9,
+   "humedad": 54.0,
+   "luz": 540.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:04",
+   "potenciometro": 2486,
+   "temperatura": 22.3,
+   "humedad": 53.2,
+   "luz": 496.5
+  },
+  {
+   "timestamp": "2026-11-10T10:00:05",
+   "potenciometro": 2558,
+   "temperatura": 22.9,
+   "humedad": 54.3,
+   "luz": 527.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:06",
+   "potenciometro": 2754,
+   "temperatura": 22.3,
+   "humedad": 52.7,
+   "luz": 467.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:07",
+   "potenciometro": 2965,
+   "temperatura": 23.3,
+   "humedad": 50.2,
+   "luz": 463.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:08",
+   "potenciometro": 2924,
+   "temperatura": 22.7,
+   "humedad": 51.3,
+   "luz": 491.3
+  },
+  {
+   "timestamp": "2026-11-10T10:00:09",
+   "potenciometro": 3015,
+   "temperatura": 23.6,
+   "humedad": 49.7,
+   "luz": 469.5
+  },
+  {
+   "timestamp": "2026-11-10T10:00:10",
+   "potenciometro": 3200,
+   "temperatura": 23.2,
+   "humedad": 48.0,
+   "luz": 432.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:11",
+   "potenciometro": 3281,
+   "temperatura": 23.9,
+   "humedad": 50.4,
+   "luz": 379.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:12",
+   "potenciometro": 3348,
+   "temperatura": 23.8,
+   "humedad": 51.9,
+   "luz": 383.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:13",
+   "potenciometro": 3345,
+   "temperatura": 23.5,
+   "humedad": 50.3,
+   "luz": 353.3
+  },
+  {
+   "timestamp": "2026-11-10T10:00:14",
+   "potenciometro": 3492,
+   "temperatura": 24.4,
+   "humedad": 48.7,
+   "luz": 355.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:15",
+   "potenciometro": 3618,
+   "temperatura": 24.6,
+   "humedad": 48.6,
+   "luz": 362.8
+  },
+  {
+   "timestamp": "2026-11-10T10:00:16",
+   "potenciometro": 3517,
+   "temperatura": 24.3,
+   "humedad": 50.3,
+   "luz": 297.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:17",
+   "potenciometro": 3642,
+   "temperatura": 24.4,
+   "humedad": 49.0,
+   "luz": 252.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:18",
+   "potenciometro": 3574,
+   "temperatura": 24.6,
+   "humedad": 48.5,
+   "luz": 219.8
+  },
+  {
+   "timestamp": "2026-11-10T10:00:19",
+   "potenciometro": 3662,
+   "temperatura": 24.5,
+   "humedad": 48.1,
+   "luz": 218.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:20",
+   "potenciometro": 3650,
+   "temperatura": 25.2,
+   "humedad": 47.8,
+   "luz": 192.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:21",
+   "potenciometro": 3803,
+   "temperatura": 24.8,
+   "humedad": 48.3,
+   "luz": 150.8
+  },
+  {
+   "timestamp": "2026-11-10T10:00:22",
+   "potenciometro": 3737,
+   "temperatura": 25.1,
+   "humedad": 47.7,
+   "luz": 155.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:23",
+   "potenciometro": 3868,
+   "temperatura": 25.0,
+   "humedad": 47.1,
+   "luz": 110.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:24",
+   "potenciometro": 3860,
+   "temperatura": 25.2,
+   "humedad": 45.5,
+   "luz": 137.9
+  },
+  {
+   "timestamp": "2026-11-10T10:00:25",
+   "potenciometro": 3825,
+   "temperatura": 25.1,
+   "humedad": 46.7,
+   "luz": 121.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:26",
+   "potenciometro": 3623,
+   "temperatura": 26.0,
+   "humedad": 45.2,
+   "luz": 107.5
+  },
+  {
+   "timestamp": "2026-11-10T10:00:27",
+   "potenciometro": 3758,
+   "temperatura": 25.7,
+   "humedad": 46.7,
+   "luz": 64.5
+  },
+  {
+   "timestamp": "2026-11-10T10:00:28",
+   "potenciometro": 3766,
+   "temperatura": 26.2,
+   "humedad": 44.1,
+   "luz": 74.7
+  },
+  {
+   "timestamp": "2026-11-10T10:00:29",
+   "potenciometro": 3740,
+   "temperatura": 26.0,
+   "humedad": 44.9,
+   "luz": 54.6
+  },
+  {
+   "timestamp": "2026-11-10T10:00:30",
+   "potenciometro": 3562,
+   "temperatura": 25.9,
+   "humedad": 44.8,
+   "luz": 44.7
+  },
+  {
+   "timestamp": "2026-11-10T10:00:31",
+   "potenciometro": 3593,
+   "temperatura": 26.1,
+   "humedad": 43.2,
+   "luz": 43.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:32",
+   "potenciometro": 3492,
+   "temperatura": 26.1,
+   "humedad": 46.0,
+   "luz": 24.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:33",
+   "potenciometro": 3439,
+   "temperatura": 26.4,
+   "humedad": 45.4,
+   "luz": 24.3
+  },
+  {
+   "timestamp": "2026-11-10T10:00:34",
+   "potenciometro": 3514,
+   "temperatura": 26.4,
+   "humedad": 43.3,
+   "luz": 74.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:35",
+   "potenciometro": 3285,
+   "temperatura": 26.5,
+   "humedad": 44.3,
+   "luz": 62.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:36",
+   "potenciometro": 3261,
+   "temperatura": 26.3,
+   "humedad": 43.6,
+   "luz": 80.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:37",
+   "potenciometro": 3243,
+   "temperatura": 26.5,
+   "humedad": 40.4,
+   "luz": 108.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:38",
+   "potenciometro": 3030,
+   "temperatura": 27.4,
+   "humedad": 43.0,
+   "luz": 67.6
+  },
+  {
+   "timestamp": "2026-11-10T10:00:39",
+   "potenciometro": 2967,
+   "temperatura": 26.8,
+   "humedad": 42.5,
+   "luz": 102.8
+  },
+  {
+   "timestamp": "2026-11-10T10:00:40",
+   "potenciometro": 2880,
+   "temperatura": 26.7,
+   "humedad": 42.5,
+   "luz": 140.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:41",
+   "potenciometro": 2768,
+   "temperatura": 27.2,
+   "humedad": 41.1,
+   "luz": 164.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:42",
+   "potenciometro": 2553,
+   "temperatura": 27.6,
+   "humedad": 41.7,
+   "luz": 169.9
+  },
+  {
+   "timestamp": "2026-11-10T10:00:43",
+   "potenciometro": 2543,
+   "temperatura": 26.8,
+   "humedad": 41.6,
+   "luz": 220.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:44",
+   "potenciometro": 2529,
+   "temperatura": 27.3,
+   "humedad": 42.8,
+   "luz": 227.4
+  },
+  {
+   "timestamp": "2026-11-10T10:00:45",
+   "potenciometro": 2178,
+   "temperatura": 27.2,
+   "humedad": 41.8,
+   "luz": 223.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:46",
+   "potenciometro": 2251,
+   "temperatura": 26.9,
+   "humedad": 41.3,
+   "luz": 253.3
+  },
+  {
+   "timestamp": "2026-11-10T10:00:47",
+   "potenciometro": 2072,
+   "temperatura": 27.8,
+   "humedad": 42.7,
+   "luz": 313.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:48",
+   "potenciometro": 1892,
+   "temperatura": 27.6,
+   "humedad": 40.5,
+   "luz": 331.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:49",
+   "potenciometro": 1983,
+   "temperatura": 27.7,
+   "humedad": 40.5,
+   "luz": 308.6
+  },
+  {
+   "timestamp": "2026-11-10T10:00:50",
+   "potenciometro": 1766,
+   "temperatura": 27.5,
+   "humedad": 38.9,
+   "luz": 397.9
+  },
+  {
+   "timestamp": "2026-11-10T10:00:51",
+   "potenciometro": 1492,
+   "temperatura": 27.9,
+   "humedad": 42.2,
+   "luz": 406.5
+  },
+  {
+   "timestamp": "2026-11-10T10:00:52",
+   "potenciometro": 1479,
+   "temperatura": 27.6,
+   "humedad": 41.5,
+   "luz": 444.0
+  },
+  {
+   "timestamp": "2026-11-10T10:00:53",
+   "potenciometro": 1407,
+   "temperatura": 27.8,
+   "humedad": 41.4,
+   "luz": 430.9
+  },
+  {
+   "timestamp": "2026-11-10T10:00:54",
+   "potenciometro": 1236,
+   "temperatura": 27.5,
+   "humedad": 41.0,
+   "luz": 452.8
+  },
+  {
+   "timestamp": "2026-11-10T10:00:55",
+   "potenciometro": 1200,
+   "temperatura": 27.5,
+   "humedad": 40.4,
+   "luz": 454.6
+  },
+  {
+   "timestamp": "2026-11-10T10:00:56",
+   "potenciometro": 1039,
+   "temperatura": 28.3,
+   "humedad": 40.4,
+   "luz": 544.6
+  },
+  {
+   "timestamp": "2026-11-10T10:00:57",
+   "potenciometro": 1000,
+   "temperatura": 27.8,
+   "humedad": 39.9,
+   "luz": 505.2
+  },
+  {
+   "timestamp": "2026-11-10T10:00:58",
+   "potenciometro": 969,
+   "temperatura": 28.0,
+   "humedad": 39.9,
+   "luz": 553.1
+  },
+  {
+   "timestamp": "2026-11-10T10:00:59",
+   "potenciometro": 713,
+   "temperatura": 28.0,
+   "humedad": 40.1,
+   "luz": 518.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:00",
+   "potenciometro": 702,
+   "temperatura": 27.9,
+   "humedad": 41.5,
+   "luz": 543.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:01",
+   "potenciometro": 573,
+   "temperatura": 27.8,
+   "humedad": 40.6,
+   "luz": 512.4
+  },
+  {
+   "timestamp": "2026-11-10T10:01:02",
+   "potenciometro": 552,
+   "temperatura": 28.2,
+   "humedad": 39.9,
+   "luz": 541.5
+  },
+  {
+   "timestamp": "2026-11-10T10:01:03",
+   "potenciometro": 384,
+   "temperatura": 27.9,
+   "humedad": 39.4,
+   "luz": 569.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:04",
+   "potenciometro": 378,
+   "temperatura": 28.0,
+   "humedad": 39.4,
+   "luz": 523.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:05",
+   "potenciometro": 360,
+   "temperatura": 28.0,
+   "humedad": 41.6,
+   "luz": 565.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:06",
+   "potenciometro": 407,
+   "temperatura": 28.3,
+   "humedad": 40.6,
+   "luz": 544.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:07",
+   "potenciometro": 394,
+   "temperatura": 28.2,
+   "humedad": 40.1,
+   "luz": 507.7
+  },
+  {
+   "timestamp": "2026-11-10T10:01:08",
+   "potenciometro": 171,
+   "temperatura": 28.1,
+   "humedad": 39.8,
+   "luz": 507.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:09",
+   "potenciometro": 196,
+   "temperatura": 27.8,
+   "humedad": 39.1,
+   "luz": 494.7
+  },
+  {
+   "timestamp": "2026-11-10T10:01:10",
+   "potenciometro": 302,
+   "temperatura": 27.5,
+   "humedad": 40.2,
+   "luz": 487.5
+  },
+  {
+   "timestamp": "2026-11-10T10:01:11",
+   "potenciometro": 89,
+   "temperatura": 28.2,
+   "humedad": 41.2,
+   "luz": 460.4
+  },
+  {
+   "timestamp": "2026-11-10T10:01:12",
+   "potenciometro": 218,
+   "temperatura": 28.1,
+   "humedad": 40.0,
+   "luz": 435.5
+  },
+  {
+   "timestamp": "2026-11-10T10:01:13",
+   "potenciometro": 262,
+   "temperatura": 27.8,
+   "humedad": 40.3,
+   "luz": 425.4
+  },
+  {
+   "timestamp": "2026-11-10T10:01:14",
+   "potenciometro": 392,
+   "temperatura": 27.9,
+   "humedad": 40.4,
+   "luz": 389.1
+  },
+  {
+   "timestamp": "2026-11-10T10:01:15",
+   "potenciometro": 377,
+   "temperatura": 28.0,
+   "humedad": 40.8,
+   "luz": 360.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:16",
+   "potenciometro": 334,
+   "temperatura": 27.9,
+   "humedad": 39.2,
+   "luz": 361.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:17",
+   "potenciometro": 376,
+   "temperatura": 27.9,
+   "humedad": 40.7,
+   "luz": 356.0
+  },
+  {
+   "timestamp": "2026-11-10T10:01:18",
+   "potenciometro": 438,
+   "temperatura": 27.4,
+   "humedad": 40.2,
+   "luz": 282.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:19",
+   "potenciometro": 639,
+   "temperatura": 28.0,
+   "humedad": 42.1,
+   "luz": 288.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:20",
+   "potenciometro": 550,
+   "temperatura": 27.1,
+   "humedad": 40.6,
+   "luz": 250.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:21",
+   "potenciometro": 633,
+   "temperatura": 27.7,
+   "humedad": 42.1,
+   "luz": 219.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:22",
+   "potenciometro": 764,
+   "temperatura": 27.5,
+   "humedad": 43.2,
+   "luz": 232.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:23",
+   "potenciometro": 812,
+   "temperatura": 27.5,
+   "humedad": 41.6,
+   "luz": 181.8
+  },
+  {
+   "timestamp": "2026-11-10T10:01:24",
+   "potenciometro": 896,
+   "temperatura": 27.7,
+   "humedad": 41.5,
+   "luz": 200.1
+  },
+  {
+   "timestamp": "2026-11-10T10:01:25",
+   "potenciometro": 918,
+   "temperatura": 27.5,
+   "humedad": 42.4,
+   "luz": 133.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:26",
+   "potenciometro": 1106,
+   "temperatura": 26.7,
+   "humedad": 42.4,
+   "luz": 138.1
+  },
+  {
+   "timestamp": "2026-11-10T10:01:27",
+   "potenciometro": 1176,
+   "temperatura": 26.4,
+   "humedad": 41.7,
+   "luz": 108.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:28",
+   "potenciometro": 1413,
+   "temperatura": 27.1,
+   "humedad": 43.3,
+   "luz": 82.1
+  },
+  {
+   "timestamp": "2026-11-10T10:01:29",
+   "potenciometro": 1483,
+   "temperatura": 26.5,
+   "humedad": 45.1,
+   "luz": 95.4
+  },
+  {
+   "timestamp": "2026-11-10T10:01:30",
+   "potenciometro": 1543,
+   "temperatura": 26.7,
+   "humedad": 43.1,
+   "luz": 69.1
+  },
+  {
+   "timestamp": "2026-11-10T10:01:31",
+   "potenciometro": 1715,
+   "temperatura": 26.8,
+   "humedad": 43.4,
+   "luz": 75.1
+  },
+  {
+   "timestamp": "2026-11-10T10:01:32",
+   "potenciometro": 1752,
+   "temperatura": 26.0,
+   "humedad": 42.8,
+   "luz": 55.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:33",
+   "potenciometro": 1983,
+   "temperatura": 25.7,
+   "humedad": 44.4,
+   "luz": 30.2
+  },
+  {
+   "timestamp": "2026-11-10T10:01:34",
+   "potenciometro": 2018,
+   "temperatura": 26.3,
+   "humedad": 43.1,
+   "luz": 48.0
+  },
+  {
+   "timestamp": "2026-11-10T10:01:35",
+   "potenciometro": 2185,
+   "temperatura": 26.2,
+   "humedad": 43.5,
+   "luz": 51.7
+  },
+  {
+   "timestamp": "2026-11-10T10:01:36",
+   "potenciometro": 2155,
+   "temperatura": 26.0,
+   "humedad": 46.1,
+   "luz": 73.0
+  },
+  {
+   "timestamp": "2026-11-10T10:01:37",
+   "potenciometro": 2404,
+   "temperatura": 26.0,
+   "humedad": 44.2,
+   "luz": 41.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:38",
+   "potenciometro": 2359,
+   "temperatura": 25.6,
+   "humedad": 46.5,
+   "luz": 66.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:39",
+   "potenciometro": 2446,
+   "temperatura": 25.3,
+   "humedad": 47.2,
+   "luz": 43.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:40",
+   "potenciometro": 2697,
+   "temperatura": 25.5,
+   "humedad": 46.3,
+   "luz": 103.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:41",
+   "potenciometro": 2759,
+   "temperatura": 25.2,
+   "humedad": 46.9,
+   "luz": 83.2
+  },
+  {
+   "timestamp": "2026-11-10T10:01:42",
+   "potenciometro": 2951,
+   "temperatura": 24.9,
+   "humedad": 48.6,
+   "luz": 85.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:43",
+   "potenciometro": 3219,
+   "temperatura": 25.4,
+   "humedad": 46.8,
+   "luz": 138.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:44",
+   "potenciometro": 3071,
+   "temperatura": 25.1,
+   "humedad": 46.7,
+   "luz": 181.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:45",
+   "potenciometro": 3181,
+   "temperatura": 25.1,
+   "humedad": 46.2,
+   "luz": 150.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:46",
+   "potenciometro": 3335,
+   "temperatura": 24.5,
+   "humedad": 48.0,
+   "luz": 181.9
+  },
+  {
+   "timestamp": "2026-11-10T10:01:47",
+   "potenciometro": 3440,
+   "temperatura": 24.5,
+   "humedad": 49.7,
+   "luz": 212.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:48",
+   "potenciometro": 3462,
+   "temperatura": 24.3,
+   "humedad": 49.5,
+   "luz": 228.8
+  },
+  {
+   "timestamp": "2026-11-10T10:01:49",
+   "potenciometro": 3530,
+   "temperatura": 24.2,
+   "humedad": 48.0,
+   "luz": 283.7
+  },
+  {
+   "timestamp": "2026-11-10T10:01:50",
+   "potenciometro": 3666,
+   "temperatura": 24.3,
+   "humedad": 48.4,
+   "luz": 285.0
+  },
+  {
+   "timestamp": "2026-11-10T10:01:51",
+   "potenciometro": 3707,
+   "temperatura": 23.9,
+   "humedad": 49.1,
+   "luz": 311.6
+  },
+  {
+   "timestamp": "2026-11-10T10:01:52",
+   "potenciometro": 3632,
+   "temperatura": 24.1,
+   "humedad": 50.3,
+   "luz": 362.4
+  },
+  {
+   "timestamp": "2026-11-10T10:01:53",
+   "potenciometro": 3750,
+   "temperatura": 24.0,
+   "humedad": 50.1,
+   "luz": 359.8
+  },
+  {
+   "timestamp": "2026-11-10T10:01:54",
+   "potenciometro": 3793,
+   "temperatura": 24.3,
+   "humedad": 50.9,
+   "luz": 407.0
+  },
+  {
+   "timestamp": "2026-11-10T10:01:55",
+   "potenciometro": 3732,
+   "temperatura": 23.2,
+   "humedad": 51.3,
+   "luz": 401.4
+  },
+  {
+   "timestamp": "2026-11-10T10:01:56",
+   "potenciometro": 3856,
+   "temperatura": 23.7,
+   "humedad": 51.1,
+   "luz": 417.8
+  },
+  {
+   "timestamp": "2026-11-10T10:01:57",
+   "potenciometro": 3777,
+   "temperatura": 23.3,
+   "humedad": 51.7,
+   "luz": 425.2
+  },
+  {
+   "timestamp": "2026-11-10T10:01:58",
+   "potenciometro": 3926,
+   "temperatura": 23.1,
+   "humedad": 52.4,
+   "luz": 517.3
+  },
+  {
+   "timestamp": "2026-11-10T10:01:59",
+   "potenciometro": 3858,
+   "temperatura": 22.6,
+   "humedad": 52.4,
+   "luz": 490.1
+  }
+ ]
+}

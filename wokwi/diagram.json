@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Decision Final — Wokwi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32:1",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1:1",
+      "top": -120,
+      "left": -180,
+      "attrs": { "value": "1024" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht221:1",
+      "top": -120,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot2:1",
+      "top": 160,
+      "left": -180,
+      "attrs": { "value": "600" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1:1",
+      "top": 160,
+      "left": 100,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1:1",
+      "top": 200,
+      "left": 50,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    ["esp32:1:GND.1", "pot1:1:GND", "black", []],
+    ["esp32:1:3V3", "pot1:1:VCC", "red", []],
+    ["esp32:1:IO34", "pot1:1:SIG", "green", []],
+
+    ["esp32:1:GND.1", "dht221:1:GND", "black", []],
+    ["esp32:1:3V3", "dht221:1:VCC", "red", []],
+    ["esp32:1:IO4", "dht221:1:SDA", "blue", []],
+
+    ["esp32:1:GND.1", "pot2:1:GND", "black", []],
+    ["esp32:1:3V3", "pot2:1:VCC", "red", []],
+    ["esp32:1:IO35", "pot2:1:SIG", "yellow", []],
+
+    ["esp32:1:IO2", "led1:1:A", "orange", []],
+    ["led1:1:K", "r1:1:1", "orange", []],
+    ["r1:1:2", "esp32:1:GND.1", "black", []]
+  ],
+  "dependencies": {}
+}
