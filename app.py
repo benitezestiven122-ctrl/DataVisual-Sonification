@@ -38,7 +38,7 @@ st.set_page_config(
 # ---------------------------------------------------------------------------
 MQTT_BROKER = "broker.hivemq.com"
 MQTT_PORT = 1883
-MQTT_TOPIC = "decisionfinal/sensores"
+MQTT_TOPIC = "decisionfinal/sensores1"
 BUFFER_MAX = 300  # lecturas máximas en el buffer rodante
 
 # ---------------------------------------------------------------------------
