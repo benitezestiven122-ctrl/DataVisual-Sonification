@@ -155,3 +155,41 @@ def disconnect() -> None:
         except Exception:
             pass
     print("[MQTT] Desconectado.")
+
+
+def publish_test() -> bool:
+    """Envía un mensaje de prueba al topic MQTT para verificar si el broker responde."""
+    with _LOCK:
+        client = _CLIENT
+    if client is None:
+        return False
+    test_payload = json.dumps({
+        "ts": int(time.time() * 1000),
+        "pot": 2048,
+        "temp": 23.5,
+        "hum": 52.0,
+        "luz": 850,
+    })
+    try:
+        res = client.publish(MQTT_TOPIC, test_payload)
+        return res.rc == 0
+    except Exception:
+        return False
+
+
+def inject_test_frame(pot: float = 2048, temp: float = 23.5, hum: float = 52.0, luz: float = 850) -> None:
+    """Inserta directamente una lectura en el buffer (para probar sin depender del broker)."""
+    global _MSG_COUNT
+    frame = {
+        "ts": time.time() * 1000,
+        "pot": pot,
+        "temp": temp,
+        "hum": hum,
+        "luz": luz,
+    }
+    with _LOCK:
+        _BUFFER.append(frame)
+        _LAST.clear()
+        _LAST.update(frame)
+        _MSG_COUNT += 1
+
