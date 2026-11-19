@@ -262,15 +262,36 @@ def tab_mqtt() -> None:
         f"**Topic:** `{live_mqtt.MQTT_TOPIC}`"
     )
 
-    # --- Botón conectar / desconectar ---
+    # --- Botones de control ---
     connected = live_mqtt.is_connected()
     btn_label = "🔴 Desconectar" if connected else "🟢 Conectar"
-    if st.button(btn_label, key="btn_mqtt_toggle"):
-        if connected:
-            live_mqtt.disconnect()
-        else:
-            live_mqtt.connect()
-        st.rerun()
+    
+    col_b1, col_b2, col_b3 = st.columns([1, 1, 1.2])
+    with col_b1:
+        if st.button(btn_label, key="btn_mqtt_toggle"):
+            if connected:
+                live_mqtt.disconnect()
+            else:
+                live_mqtt.connect()
+            st.rerun()
+    with col_b2:
+        if connected and st.button("🧪 Probar MQTT", help="Publica un mensaje de prueba al broker para verificar si retorna"):
+            ok = live_mqtt.publish_test()
+            if ok:
+                st.toast("Mensaje de prueba enviado al broker")
+            else:
+                st.toast("Error al enviar mensaje de prueba")
+    with col_b3:
+        if connected and st.button("🎲 Simular 10 lecturas", help="Llena el buffer con datos simulados para probar la sonificación"):
+            for _ in range(10):
+                import random
+                live_mqtt.inject_test_frame(
+                    pot=random.uniform(500, 3500),
+                    temp=random.uniform(20.0, 30.0),
+                    hum=random.uniform(40.0, 70.0),
+                    luz=random.uniform(300, 3000),
+                )
+            st.rerun()
 
     err = live_mqtt.get_error()
     last = live_mqtt.get_last()
