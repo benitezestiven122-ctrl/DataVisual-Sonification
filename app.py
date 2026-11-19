@@ -50,6 +50,7 @@ from sonification.preprocess import preprocess
 from sonification.sonify import sonify
 from sonification.visual import build_html
 from sonification.audio.scales import SCALES
+from sonification import live as live_mqtt
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -67,18 +68,6 @@ def _init_session_state() -> None:
 
 
 _init_session_state()
-
-# ---------------------------------------------------------------------------
-# Buffer global MQTT (thread-safe, independiente de st.session_state)
-# ---------------------------------------------------------------------------
-_MQTT_LOCK = threading.Lock()
-_GLOBAL_BUFFER: deque[dict[str, Any]] = deque(maxlen=BUFFER_MAX)
-_GLOBAL_LAST: dict[str, Any] = {}
-_GLOBAL_ERROR: str = ""
-_GLOBAL_CLIENT: Any = None
-_GLOBAL_CONNECTED: bool = False
-_GLOBAL_SUBSCRIBED: bool = False
-_GLOBAL_MSG_COUNT: int = 0
 
 
 @st.cache_data(show_spinner="Cargando datos…")
@@ -256,139 +245,47 @@ def tab_dataset() -> None:
 # Pestaña 2 — En vivo (MQTT)
 # ---------------------------------------------------------------------------
 
-def _mqtt_connect() -> None:
-    """Crea y arranca el cliente MQTT en un hilo daemon."""
-    global _GLOBAL_CLIENT, _GLOBAL_CONNECTED, _GLOBAL_SUBSCRIBED, _GLOBAL_ERROR
-    try:
-        import paho.mqtt.client as mqtt  # type: ignore
-    except ImportError:
-        with _MQTT_LOCK:
-            _GLOBAL_ERROR = "paho-mqtt no está instalado. Ejecuta: pip install paho-mqtt"
-        return
-
-    def on_connect(client, userdata, flags, rc, properties=None):  # noqa: ARG001
-        global _GLOBAL_ERROR, _GLOBAL_SUBSCRIBED
-        if rc == 0:
-            client.subscribe(MQTT_TOPIC)
-            with _MQTT_LOCK:
-                _GLOBAL_ERROR = ""
-                _GLOBAL_SUBSCRIBED = True
-            print(f"[MQTT] Conectado y suscrito exitosamente a {MQTT_TOPIC}")
-        else:
-            with _MQTT_LOCK:
-                _GLOBAL_ERROR = f"Error de conexión MQTT (rc={rc})"
-                _GLOBAL_SUBSCRIBED = False
-            print(f"[MQTT] Error de conexión rc={rc}")
-
-    def on_message(client, userdata, msg):  # noqa: ARG001
-        global _GLOBAL_MSG_COUNT
-        try:
-            payload = json.loads(msg.payload.decode("utf-8"))
-            frame = {
-                "ts": payload.get("ts", time.time() * 1000),
-                "pot": float(payload.get("pot", 0)),
-                "temp": float(payload.get("temp", 0)),
-                "hum": float(payload.get("hum", 0)),
-                "luz": float(payload.get("luz", 0)),
-            }
-            with _MQTT_LOCK:
-                _GLOBAL_BUFFER.append(frame)
-                _GLOBAL_LAST.clear()
-                _GLOBAL_LAST.update(frame)
-                _GLOBAL_MSG_COUNT += 1
-            print(f"[MQTT] Recibido #{_GLOBAL_MSG_COUNT}: {frame}")
-        except Exception as exc:
-            print(f"[MQTT] Error parseando mensaje: {exc}")
-
-    client_id = f"decision-final-web-{int(time.time())}"
-    try:
-        client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, client_id=client_id)
-    except (AttributeError, TypeError):
-        client = mqtt.Client(client_id=client_id)
-
-    client.on_connect = on_connect
-    client.on_message = on_message
-
-    def _run():
-        global _GLOBAL_ERROR, _GLOBAL_CONNECTED, _GLOBAL_SUBSCRIBED
-        try:
-            client.connect(MQTT_BROKER, MQTT_PORT, keepalive=60)
-            client.loop_forever()
-        except Exception as exc:
-            with _MQTT_LOCK:
-                _GLOBAL_ERROR = f"Error de socket MQTT: {exc}"
-                _GLOBAL_CONNECTED = False
-                _GLOBAL_SUBSCRIBED = False
-            print(f"[MQTT] Exception en bucle: {exc}")
-
-    t = threading.Thread(target=_run, daemon=True)
-    t.start()
-    _GLOBAL_CLIENT = client
-    _GLOBAL_CONNECTED = True
-    _GLOBAL_SUBSCRIBED = False
-
-
-def _mqtt_disconnect() -> None:
-    global _GLOBAL_CLIENT, _GLOBAL_CONNECTED, _GLOBAL_SUBSCRIBED
-    if _GLOBAL_CLIENT is not None:
-        try:
-            _GLOBAL_CLIENT.disconnect()
-            _GLOBAL_CLIENT.loop_stop()
-        except Exception:
-            pass
-    _GLOBAL_CONNECTED = False
-    _GLOBAL_SUBSCRIBED = False
-    _GLOBAL_CLIENT = None
-
-
 def _buffer_to_df() -> pd.DataFrame:
-    with _MQTT_LOCK:
-        buf = list(_GLOBAL_BUFFER)
+    buf = live_mqtt.get_buffer()
     if not buf:
         return pd.DataFrame(columns=["ts", "pot", "temp", "hum", "luz"])
     return pd.DataFrame(buf)
 
 
 def tab_mqtt() -> None:
-    global _GLOBAL_ERROR
     st.header("📡 En vivo (MQTT)")
 
     # --- Info broker ---
     st.info(
-        f"**Broker:** `{MQTT_BROKER}` &nbsp;|&nbsp; "
-        f"**Puerto:** `{MQTT_PORT}` &nbsp;|&nbsp; "
-        f"**Topic:** `{MQTT_TOPIC}`"
+        f"**Broker:** `{live_mqtt.MQTT_BROKER}` &nbsp;|&nbsp; "
+        f"**Puerto:** `{live_mqtt.MQTT_PORT}` &nbsp;|&nbsp; "
+        f"**Topic:** `{live_mqtt.MQTT_TOPIC}`"
     )
 
     # --- Botón conectar / desconectar ---
-    connected = _GLOBAL_CONNECTED
+    connected = live_mqtt.is_connected()
     btn_label = "🔴 Desconectar" if connected else "🟢 Conectar"
     if st.button(btn_label, key="btn_mqtt_toggle"):
         if connected:
-            _mqtt_disconnect()
+            live_mqtt.disconnect()
         else:
-            with _MQTT_LOCK:
-                _GLOBAL_BUFFER.clear()
-                _GLOBAL_LAST.clear()
-                _GLOBAL_ERROR = ""
-            _mqtt_connect()
+            live_mqtt.connect()
         st.rerun()
 
-    with _MQTT_LOCK:
-        err = _GLOBAL_ERROR
-        last = dict(_GLOBAL_LAST)
-        count = _GLOBAL_MSG_COUNT
-        is_sub = _GLOBAL_SUBSCRIBED
+    err = live_mqtt.get_error()
+    last = live_mqtt.get_last()
+    count = live_mqtt.get_count()
+    is_sub = live_mqtt.is_subscribed()
 
     if err:
         st.error(err)
 
-    if not _GLOBAL_CONNECTED:
+    if not live_mqtt.is_connected():
         st.caption("Presiona **Conectar** para suscribirte al broker y recibir datos en tiempo real.")
         return
 
     if is_sub:
-        st.success(f"🟢 Conectado y escuchando el topic `{MQTT_TOPIC}`")
+        st.success(f"🟢 Conectado y escuchando el topic `{live_mqtt.MQTT_TOPIC}`")
     else:
         st.warning("🟡 Conectando al broker... si tarda más de 5 segundos, el broker puede estar lento.")
 
@@ -472,7 +369,7 @@ def tab_mqtt() -> None:
             components.html(html_str, height=520, scrolling=False)
 
     # --- Auto-refresco cada 2 s mientras esté conectado ---
-    if _GLOBAL_CONNECTED:
+    if live_mqtt.is_connected():
         time.sleep(2)
         st.rerun()
 
