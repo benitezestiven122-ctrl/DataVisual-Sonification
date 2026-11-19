@@ -350,6 +350,7 @@ def _buffer_to_df() -> pd.DataFrame:
 
 
 def tab_mqtt() -> None:
+    global _GLOBAL_ERROR
     st.header("📡 En vivo (MQTT)")
 
     # --- Info broker ---
